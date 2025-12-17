@@ -3,224 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Sim Farm Tycoon</title>
+    <title>Privacy Policy - DalJord Creations</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-color: #5D4037; /* Barn Wood Brown */
-            --accent-color: #7CB342; /* Fresh Grass Green */
-            --bg-color: #F1F8E9; /* Light Green Background */
-            --card-bg: #FFFBF0; /* Parchment White */
-            --text-color: #333333;
-            --link-color: #2E7D32;
+            --primary-color: #2c3e50; /* Studio Dark Blue */
+            --accent-color: #3498db; /* Tech Blue */
+            --bg-color: #f4f6f9;      /* Light Gray Background */
+            --card-bg: #ffffff;       /* White Card */
+            --text-color: #333;
+            --text-light: #666;
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: var(--bg-color);
-            background-image: radial-gradient(#C5E1A5 15%, transparent 16%), radial-gradient(#C5E1A5 15%, transparent 16%);
-            background-size: 60px 60px;
-            background-position: 0 0, 30px 30px;
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 800px;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border: 4px solid var(--primary-color);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Fredoka', sans-serif;
-            color: var(--primary-color);
-        }
-
-        h1 {
+        /* Header Section */
+        header {
+            background: var(--primary-color);
+            color: white;
+            width: 100%;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            border-bottom: 3px dashed var(--accent-color);
-            padding-bottom: 20px;
+        }
+
+        header p {
+            margin-top: 10px;
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        /* Main Content Card */
+        .container {
+            max-width: 900px;
+            background: var(--card-bg);
+            margin: -30px 20px 50px 20px; /* Overlap header slightly */
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
         }
 
         h2 {
-            margin-top: 30px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 40px;
             font-size: 1.5rem;
         }
 
-        p, ul {
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--accent-color);
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+
+        p {
             margin-bottom: 15px;
+            color: var(--text-light);
         }
 
         ul {
-            list-style-type: none; /* Custom bullets */
             padding-left: 20px;
+            color: var(--text-light);
         }
 
         li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        li::before {
-            content: '🥕'; /* Cute carrot bullet point */
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
+        /* Standard Links */
         a {
-            color: var(--link-color);
-            font-weight: 700;
+            color: var(--accent-color);
             text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
+            font-weight: 600;
+            transition: color 0.2s;
         }
 
         a:hover {
-            border-bottom: 2px solid var(--link-color);
+            color: var(--primary-color);
+            text-decoration: underline;
         }
 
-        .game-logo {
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 3rem;
-        }
-
-        .studio-name {
-            text-align: center;
-            color: #666;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        .update-date {
-            text-align: center;
-            font-style: italic;
-            color: #888;
             font-size: 0.9rem;
+            color: var(--text-light);
+            width: 100%;
+            border-top: 1px solid #eee;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-                border-width: 2px;
-            }
-            h1 {
-                font-size: 1.8rem;
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header { padding: 30px 15px; }
+            header h1 { font-size: 1.8rem; }
+            .container { 
+                margin: 0; 
+                padding: 25px; 
+                border-radius: 0;
+                box-shadow: none;
             }
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <h1>DalJord Creations</h1>
+        <p>Global Privacy Policy for All Applications</p>
+    </header>
+
     <div class="container">
-        <div class="game-logo">🚜</div>
-        <h1>Privacy Policy</h1>
-        <div class="studio-name">DalJord Creations | Sim Farm Tycoon: Empire Sim</div>
-        <div class="update-date">Last updated: December 18, 2025</div>
+        <p><strong>Last Updated: December 18, 2025</strong></p>
 
         <p>
-            DalJord Creations built the <strong>Sim Farm Tycoon: Empire Sim</strong> app as an Ad-Supported app. 
-            This SERVICE is provided by DalJord Creations at no cost and is intended for use as is.
+            DalJord Creations ("we," "us," or "our") is dedicated to protecting the privacy of our users ("you" or "your"). This Privacy Policy applies to all mobile applications and games developed and published by DalJord Creations on the Google Play Store and other platforms.
         </p>
         
         <p>
-            This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
+            Our applications are built as Ad-Supported or Freemium services. This SERVICE is provided by DalJord Creations at no cost and is intended for use as is. If you choose to use our Service, then you agree to the collection and use of information in relation to this policy.
         </p>
 
-        <p>
-            If you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.
-        </p>
-
-        <h2>Information Collection and Use</h2>
+        <h2>1. Information Collection and Use</h2>
         <p>
             For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained on your device and is not collected by us in any way.
         </p>
         <p>
-            The app does use third-party services that may collect information used to identify you.
+            However, our applications use third-party services that may collect information used to identify you to provide services like analytics, advertising, and crash reporting.
         </p>
-        <p><strong>Link to privacy policy of third-party service providers used by the app:</strong></p>
+
+        <h2>2. Third-Party Services</h2>
+        <p>
+            We use trusted third-party partners to improve our services and display advertising. These partners may collect data such as your Device ID, Advertising ID, IP address, and in-game usage data. Please review the privacy policies of the services we use:
+        </p>
         <ul>
             <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a></li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
-            <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a></li>
-            <li><a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Crashlytics</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">Google AdMob</a> (Advertising)</li>
+            <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a> (Analytics)</li>
+            <li><a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Crashlytics</a> (Crash Reporting)</li>
         </ul>
 
-        <h2>Specific Services Used</h2>
-        <p>To ensure full transparency and compliance with Google Play Data Safety standards, we list the specific tools used in this app:</p>
-
-        <h3>1. Google AdMob (Advertising)</h3>
-        <p>We use Google AdMob to display advertisements. AdMob may use your device's Advertising ID to serve personalized ads based on your interests. You can opt-out of personalized advertising by visiting your device settings (Settings > Google > Ads > Opt out of Ads Personalization).</p>
-
-        <h3>2. Firebase Analytics</h3>
-        <p>We use Firebase Analytics to understand how users interact with our app. This service collects usage data, such as how long you play, which screens you visit, and in-game events. This data is anonymized and helps us improve the game experience.</p>
-
-        <h3>3. Firebase Remote Config</h3>
-        <p>We use Firebase Remote Config to instantly update the app's behavior and appearance without requiring an app store update.</p>
-
-        <h3>4. Firebase Cloud Messaging</h3>
-        <p>We use Firebase Cloud Messaging to send push notifications. This service uses an Instance ID to identify your app installation to send these messages.</p>
-
-        <h3>5. Log Data</h3>
+        <h2>3. Detailed Data Practices</h2>
+        
+        <h3>Advertising (AdMob)</h3>
         <p>
-            We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.
+            We use Google AdMob to display ads. AdMob may use your device's Advertising ID (AAID) to serve personalized advertisements based on your interests. You can reset your Advertising ID or opt-out of personalized ads in your device settings (Settings > Google > Ads).
         </p>
 
-        <h2>Cookies</h2>
+        <h3>Analytics & Game Data (Firebase)</h3>
         <p>
-            Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.
-        </p>
-        <p>
-            This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device.
+            We use Firebase Analytics to understand how our apps are used (e.g., how many users passed a level, average session length). This data is anonymized and helps us fix bugs and improve gameplay. We also use <strong>Firebase Remote Config</strong> to update game parameters without an update and <strong>Firebase Cloud Messaging</strong> to send notifications.
         </p>
 
-        <h2>Service Providers</h2>
-        <p>We may employ third-party companies and individuals due to the following reasons:</p>
-        <ul>
-            <li>To facilitate our Service;</li>
-            <li>To provide the Service on our behalf;</li>
-            <li>To perform Service-related services; or</li>
-            <li>To assist us in analyzing how our Service is used.</li>
-        </ul>
+        <h3>Log Data</h3>
+        <p>
+            In a case of an error in the app, we collect data and information (through third-party products) on your phone called Log Data. This may include your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.
+        </p>
 
-        <h2>Security</h2>
+        <h2>4. Cookies</h2>
+        <p>
+            Our Service does not use "cookies" explicitly. However, third-party code and libraries used in our apps (like AdMob) may use "cookies" to collect information and improve their services. You have the option to accept or refuse these cookies within your device or browser settings.
+        </p>
+
+        <h2>5. Children’s Privacy</h2>
+        <p>
+            These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us.
+        </p>
+
+        <h2>6. Security</h2>
         <p>
             We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
         </p>
 
-        <h2>Children’s Privacy</h2>
+        <h2>7. Changes to This Privacy Policy</h2>
         <p>
-            These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do the necessary actions.
+            We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
         </p>
 
-        <h2>Changes to This Privacy Policy</h2>
+        <h2>8. Contact Us</h2>
         <p>
-            We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.
+            If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:
         </p>
-        <p>This policy is effective as of 2025-12-18.</p>
-
-        <h2>Contact Us</h2>
-        <p>
-            If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <br>
-            <strong><a href="mailto:contact@email.com">[INSERT YOUR EMAIL HERE]</a></strong>
+        <p style="text-align: center; font-size: 1.2rem; margin-top: 20px;">
+            <strong><a href="mailto:daljordcreations@gmail.com">daljordcreations@gmail.com</a></strong>
         </p>
     </div>
+
+    <footer>
+        &copy; 2025 DalJord Creations. All rights reserved.
+    </footer>
 
 </body>
 </html>
