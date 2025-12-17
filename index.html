@@ -7,212 +7,257 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-color: #2c3e50; /* Studio Dark Blue */
-            --accent-color: #3498db; /* Tech Blue */
-            --bg-color: #f4f6f9;      /* Light Gray Background */
-            --card-bg: #ffffff;       /* White Card */
-            --text-color: #333;
-            --text-light: #666;
+            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-color: #00d2ff; /* Cyber Blue */
+            --accent-glow: #00d2ff80;
+            --text-main: #ffffff;
+            --text-muted: #b3b3b3;
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
             margin: 0;
             padding: 0;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
         }
 
-        /* Header Section */
+        /* Decorative animated background shapes */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+        .orb-1 { top: -50px; left: -50px; width: 300px; height: 300px; background: #8e2de2; }
+        .orb-2 { bottom: -50px; right: -50px; width: 400px; height: 400px; background: #4a00e0; }
+
+        /* Header */
         header {
-            background: var(--primary-color);
-            color: white;
             width: 100%;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            font-family: 'Poppins', sans-serif;
+        h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
             margin: 0;
-            font-size: 2.5rem;
+            text-shadow: 0 0 20px var(--accent-glow);
+            background: -webkit-linear-gradient(#fff, #a1a1a1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        header p {
+        .subtitle {
+            font-size: 1rem;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-top: 10px;
-            opacity: 0.8;
-            font-size: 1.1rem;
+            font-weight: 600;
         }
 
-        /* Main Content Card */
+        /* Glass Container */
         .container {
+            width: 90%;
             max-width: 900px;
-            background: var(--card-bg);
-            margin: -30px 20px 50px 20px; /* Overlap header slightly */
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
             padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            position: relative;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            margin-bottom: 50px;
         }
 
         h2 {
-            font-family: 'Poppins', sans-serif;
-            color: var(--primary-color);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--accent-color);
+            font-size: 1.8rem;
             margin-top: 40px;
-            font-size: 1.5rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
         }
 
         h3 {
-            font-family: 'Poppins', sans-serif;
-            color: var(--accent-color);
-            margin-top: 25px;
-            font-size: 1.2rem;
+            font-family: 'Rajdhani', sans-serif;
+            color: #fff;
+            font-size: 1.3rem;
+            margin-top: 30px;
         }
 
-        p {
-            margin-bottom: 15px;
-            color: var(--text-light);
+        p, li {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1rem;
         }
 
         ul {
-            padding-left: 20px;
-            color: var(--text-light);
+            list-style: none;
+            padding-left: 0;
         }
 
         li {
-            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 10px;
         }
 
-        /* Standard Links */
+        li::before {
+            content: '>';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
         a {
             color: var(--accent-color);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-color);
         }
 
-        /* Footer */
+        /* Button Style for Email */
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #4a00e0, #8e2de2);
+            color: white !important;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(142, 45, 226, 0.4);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(142, 45, 226, 0.6);
+            text-shadow: none;
+        }
+
         footer {
-            margin-top: auto;
-            padding: 20px;
-            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
             font-size: 0.9rem;
-            color: var(--text-light);
-            width: 100%;
-            border-top: 1px solid #eee;
+            text-align: center;
         }
 
-        /* Mobile Responsiveness */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            header { padding: 30px 15px; }
-            header h1 { font-size: 1.8rem; }
-            .container { 
-                margin: 0; 
-                padding: 25px; 
-                border-radius: 0;
-                box-shadow: none;
-            }
+            h1 { font-size: 2.2rem; }
+            .container { padding: 25px; width: 85%; }
         }
     </style>
 </head>
 <body>
 
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
     <header>
         <h1>DalJord Creations</h1>
-        <p>Global Privacy Policy for All Applications</p>
+        <div class="subtitle">Official Privacy Policy</div>
     </header>
 
     <div class="container">
-        <p><strong>Last Updated: December 18, 2025</strong></p>
+        <p style="text-align: center; color: var(--accent-color);"><strong>Last Updated: December 18, 2025</strong></p>
 
         <p>
-            DalJord Creations ("we," "us," or "our") is dedicated to protecting the privacy of our users ("you" or "your"). This Privacy Policy applies to all mobile applications and games developed and published by DalJord Creations on the Google Play Store and other platforms.
+            DalJord Creations ("we," "us," or "our") is dedicated to protecting the privacy of our users ("you" or "your"). This Privacy Policy applies to all mobile applications, games, and digital services developed and published by DalJord Creations.
         </p>
         
         <p>
-            Our applications are built as Ad-Supported or Freemium services. This SERVICE is provided by DalJord Creations at no cost and is intended for use as is. If you choose to use our Service, then you agree to the collection and use of information in relation to this policy.
+            Our applications are built as <strong>Ad-Supported</strong> or <strong>Freemium</strong> services. This SERVICE is provided by DalJord Creations at no cost and is intended for use as is. If you choose to use our Service, then you agree to the collection and use of information in relation to this policy.
         </p>
 
-        <h2>1. Information Collection and Use</h2>
+        <h2>1. Information Collection</h2>
         <p>
-            For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained on your device and is not collected by us in any way.
+            For a better experience while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained on your device and is not collected by us in any way.
         </p>
         <p>
-            However, our applications use third-party services that may collect information used to identify you to provide services like analytics, advertising, and crash reporting.
+            However, our applications integrate trusted third-party services that may collect information used to identify you to provide core functionalities like analytics, advertising, and crash reporting.
         </p>
 
-        <h2>2. Third-Party Services</h2>
+        <h2>2. Third-Party Partners</h2>
         <p>
-            We use trusted third-party partners to improve our services and display advertising. These partners may collect data such as your Device ID, Advertising ID, IP address, and in-game usage data. Please review the privacy policies of the services we use:
+            We partner with industry-leading providers to ensure our games run smoothly and remain free. Please review the privacy policies of the services we utilize:
         </p>
         <ul>
             <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a></li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">Google AdMob</a> (Advertising)</li>
-            <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a> (Analytics)</li>
-            <li><a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Crashlytics</a> (Crash Reporting)</li>
+            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">Google AdMob</a> (Advertising Network)</li>
+            <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a> (User Insights)</li>
+            <li><a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Crashlytics</a> (Stability Monitoring)</li>
         </ul>
 
-        <h2>3. Detailed Data Practices</h2>
+        <h2>3. Data Usage Breakdown</h2>
         
         <h3>Advertising (AdMob)</h3>
         <p>
-            We use Google AdMob to display ads. AdMob may use your device's Advertising ID (AAID) to serve personalized advertisements based on your interests. You can reset your Advertising ID or opt-out of personalized ads in your device settings (Settings > Google > Ads).
+            We use Google AdMob to display advertisements. AdMob may use your device's Advertising ID (AAID) to serve personalized advertisements based on your interests. You can reset your Advertising ID or opt-out of personalized ads in your device settings (Settings > Google > Ads).
         </p>
 
-        <h3>Analytics & Game Data (Firebase)</h3>
+        <h3>Game Analytics (Firebase)</h3>
         <p>
-            We use Firebase Analytics to understand how our apps are used (e.g., how many users passed a level, average session length). This data is anonymized and helps us fix bugs and improve gameplay. We also use <strong>Firebase Remote Config</strong> to update game parameters without an update and <strong>Firebase Cloud Messaging</strong> to send notifications.
+            We use Firebase Analytics to understand user behavior (e.g., level progression, session duration). This data is <strong>anonymized</strong> and helps us balance game difficulty and improve features. We also use <strong>Firebase Remote Config</strong> to deliver content updates and <strong>Firebase Cloud Messaging</strong> for game notifications.
         </p>
 
         <h3>Log Data</h3>
         <p>
-            In a case of an error in the app, we collect data and information (through third-party products) on your phone called Log Data. This may include your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.
+            In the event of an app error, we collect Log Data (via third-party products). This may include your device Internet Protocol (“IP”) address, device name, operating system version, app configuration, and timestamp.
         </p>
 
-        <h2>4. Cookies</h2>
+        <h2>4. Cookies & Tracking</h2>
         <p>
-            Our Service does not use "cookies" explicitly. However, third-party code and libraries used in our apps (like AdMob) may use "cookies" to collect information and improve their services. You have the option to accept or refuse these cookies within your device or browser settings.
+            Our Service does not use "cookies" explicitly. However, third-party libraries (like AdMob) may use cookies or similar technologies to collect information. You have the option to accept or refuse these cookies within your device settings.
         </p>
 
         <h2>5. Children’s Privacy</h2>
         <p>
-            These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us.
+            These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers.
         </p>
 
         <h2>6. Security</h2>
         <p>
-            We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
+            We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. However, remember that no method of transmission over the internet is 100% secure.
         </p>
 
-        <h2>7. Changes to This Privacy Policy</h2>
+        <h2>7. Policy Updates</h2>
         <p>
-            We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
+            We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. Changes are effective immediately after they are posted on this page.
         </p>
 
         <h2>8. Contact Us</h2>
         <p>
-            If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:
+            If you have any questions or suggestions about our Privacy Policy, please contact us directly:
         </p>
-        <p style="text-align: center; font-size: 1.2rem; margin-top: 20px;">
-            <strong><a href="mailto:daljordcreations@gmail.com">daljordcreations@gmail.com</a></strong>
-        </p>
+        
+        <div style="text-align: center;">
+            <a href="mailto:daljordcreations@gmail.com" class="contact-btn">daljordcreations@gmail.com</a>
+        </div>
     </div>
 
     <footer>
